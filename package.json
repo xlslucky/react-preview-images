@@ -1,0 +1,24 @@
+{
+  "name": "react-preview-images",
+  "version": "1.0.0",
+  "description": "preview image",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xlslucky/react-preview-images.git"
+  },
+  "keywords": [
+    "react",
+    "preview",
+    "image"
+  ],
+  "author": "xlslucky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xlslucky/react-preview-images/issues"
+  },
+  "homepage": "https://github.com/xlslucky/react-preview-images#readme"
+}
