@@ -55,9 +55,9 @@ module.exports = {
   },
   externals: {
     react: 'react',
-    classnames: 'classnames',
+    // classnames: 'classnames',
     'react-dom': 'react-dom',
-    'use-hooks-react': 'use-hooks-react',
+    // 'use-hooks-react': 'use-hooks-react',
   },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],

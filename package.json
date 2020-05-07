@@ -1,6 +1,6 @@
 {
   "name": "react-preview-images",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "preview image",
   "main": "dist/index.js",
   "scripts": {
@@ -23,12 +23,12 @@
   },
   "homepage": "https://github.com/xlslucky/react-preview-images#readme",
   "dependencies": {
+    "use-hooks-react": "^1.1.2",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
-    "classnames": "^2.2.6",
     "react": "^16.8.4",
     "react-dom": "^16.13.1",
-    "use-hooks-react": "^1.1.2",
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
@@ -68,10 +68,8 @@
     "webpack-dev-server": "^3.2.1"
   },
   "peerDependencies": {
-    "classnames": "2.x",
     "react": "16.x",
-    "react-dom": "16.x",
-    "use-hooks-react": "1.x"
+    "react-dom": "16.x"
   },
   "config": {
     "commitizen": {
