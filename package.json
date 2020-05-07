@@ -1,6 +1,6 @@
 {
   "name": "react-preview-images",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "preview image",
   "main": "dist/index.js",
   "scripts": {
