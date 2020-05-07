@@ -80,7 +80,6 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        // include: ['./example', './src'],
       },
       {
         test: /\.(js|jsx|ts|tsx)$/,
