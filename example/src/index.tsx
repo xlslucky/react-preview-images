@@ -3,7 +3,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 // components
-import { PreviewPc } from '../../src'
+import {
+  // PreviewPc,
+  PreviewH5,
+} from '../../src'
 
 // styles
 const styles = require('./App.module.less')
@@ -44,13 +47,21 @@ export default function App() {
           </div>
         ))}
       </div>
-      <PreviewPc
+      <PreviewH5
         visible={showModal}
-        title="预览图片"
-        list={IMAGE_LIST}
         curIndex={activeIndex}
+        list={IMAGE_LIST}
         onCancel={() => setShowModal(false)}
       />
+      {
+        // <PreviewPc
+        //   visible={showModal}
+        //   title="预览图片"
+        //   list={IMAGE_LIST}
+        //   curIndex={activeIndex}
+        //   onCancel={() => setShowModal(false)}
+        // />
+      }
     </div>
   )
 }

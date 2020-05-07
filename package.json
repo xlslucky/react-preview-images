@@ -25,7 +25,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "react": "^16.8.4",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "use-hooks-react": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
@@ -69,7 +70,8 @@
   "peerDependencies": {
     "classnames": "2.x",
     "react": "16.x",
-    "react-dom": "16.x"
+    "react-dom": "16.x",
+    "use-hooks-react": "1.x"
   },
   "config": {
     "commitizen": {
