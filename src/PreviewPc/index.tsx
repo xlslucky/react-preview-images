@@ -12,6 +12,8 @@ interface PreviewProps {
   visible: boolean
   title?: string
   list: Array<string>
+  // 缩略图列表 可选
+  thumbnailList?: Array<string>
   curIndex?: number
   onCancel: () => void
 }
@@ -20,6 +22,7 @@ export default function PreviewPc({
   visible,
   title,
   list,
+  thumbnailList,
   curIndex,
   onCancel,
 }: PreviewProps) {
@@ -57,7 +60,7 @@ export default function PreviewPc({
               <img src={list[activeIndex]} alt="" />
             </div>
             <div className={styles['img-list']}>
-              {list.map((url, i) => (
+              {(thumbnailList || list).map((url, i) => (
                 <div
                   key={i}
                   className={classnames(styles.img, {
