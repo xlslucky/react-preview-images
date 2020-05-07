@@ -53,9 +53,12 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'commonjs2',
   },
-  // externals: {
-  //   react: 'react',
-  // },
+  externals: {
+    react: 'react',
+    classnames: 'classnames',
+    'react-dom': 'react-dom',
+    'use-hooks-react': 'use-hooks-react',
+  },
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
