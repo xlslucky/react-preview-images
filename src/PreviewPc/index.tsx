@@ -37,6 +37,8 @@ export default function PreviewPc({
   React.useEffect(() => {
     if (visible) {
       setActiveIndex(curIndex || 0)
+    } else {
+      setActiveIndex(0)
     }
   }, [visible, curIndex])
 
@@ -53,7 +55,11 @@ export default function PreviewPc({
       <React.Fragment>
         <div className={styles.mask} onClick={onCancel} />
         <div className={styles.modal}>
-          {title ? <div className={styles['modal-header']}>{title}</div> : null}
+          {title ? (
+            <div className={styles['modal-header']}>
+              <div className={styles['modal-title']}>{title}</div>
+            </div>
+          ) : null}
           <div className={styles['modal-close']} onClick={onCancel} />
           <div className={styles['modal-body']}>
             <div className={styles.preview}>

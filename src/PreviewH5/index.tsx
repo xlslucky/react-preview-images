@@ -72,7 +72,7 @@ export default function PreviewH5({
   visible,
   onCancel,
 }: PreviewH5Props) {
-  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const [activeIndex, setActiveIndex] = React.useState(0)
   const [startX, setStartX] = React.useState(0)
   const [translate, setTranslate] = React.useState(0)
   const [animation, setAnimation] = React.useState(false)
@@ -88,8 +88,10 @@ export default function PreviewH5({
 
   React.useEffect(() => {
     if (visible) {
-      setCurrentIndex(curIndex || 0)
+      setActiveIndex(curIndex || 0)
       setAnimation(false)
+    } else {
+      setActiveIndex(0)
     }
   }, [curIndex, visible])
 
@@ -109,10 +111,10 @@ export default function PreviewH5({
     if (Math.abs(number) < 30) {
       return
     }
-    if (currentIndex === 0 && number > 0) {
+    if (activeIndex === 0 && number > 0) {
       // 第一张左划
       setTranslate(number / 2)
-    } else if (currentIndex === list.length - 1 && number < 0) {
+    } else if (activeIndex === list.length - 1 && number < 0) {
       // 最后一张右滑
       setTranslate(number / 2)
     } else {
@@ -122,13 +124,13 @@ export default function PreviewH5({
 
   function onTouchEnd() {
     const offset = screenWidth * 0.25
-    if (translate < -offset && currentIndex < list.length - 1) {
+    if (translate < -offset && activeIndex < list.length - 1) {
       // 下一张
-      setCurrentIndex(currentIndex + 1)
+      setActiveIndex(activeIndex + 1)
     }
-    if (translate > offset && currentIndex > 0) {
+    if (translate > offset && activeIndex > 0) {
       // 上一张
-      setCurrentIndex(currentIndex - 1)
+      setActiveIndex(activeIndex - 1)
     }
     setStartX(0)
     setTranslate(0)
@@ -136,11 +138,11 @@ export default function PreviewH5({
   }
 
   const listStyle = React.useMemo(() => {
-    const number = -(currentIndex * (screenWidth + 10)) + translate
+    const number = -(activeIndex * (screenWidth + 10)) + translate
     return {
       transform: `translateX(${number}px)`,
     }
-  }, [screenWidth, currentIndex, translate])
+  }, [screenWidth, activeIndex, translate])
 
   if (!visible) {
     return null
@@ -165,7 +167,7 @@ export default function PreviewH5({
               <PreviewItem
                 key={`${i + 1}`}
                 url={url}
-                show={Math.abs(currentIndex - i) <= 1}
+                show={Math.abs(activeIndex - i) <= 1}
               />
             )
           })}
@@ -174,7 +176,7 @@ export default function PreviewH5({
           {list.map((_, i) => (
             <span
               className={classnames(styles.round, {
-                [styles.active]: currentIndex === i,
+                [styles.active]: activeIndex === i,
               })}
               key={`${i + 1}`}
             />
